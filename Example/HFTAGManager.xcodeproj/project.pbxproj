@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		548CC0DC047CAF918F23AFCD /* Pods_HFTAGManager_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9B53A40D8BA2A04A0803DC /* Pods_HFTAGManager_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0B2A8CEAB6C72D4AA3D433CC /* libPods-HFTAGManager_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D88C2D03D8ED10B65734A63 /* libPods-HFTAGManager_Tests.a */; };
+		5F60B33E02D1BE0F22961C1F /* libPods-HFTAGManager_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 132E7D03FA92BACFECC19B3D /* libPods-HFTAGManager_Example.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -20,9 +21,8 @@
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
-		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		9976D537E9A55CBBC91E588F /* Pods_HFTAGManager_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29044864773E56C4AE136416 /* Pods_HFTAGManager_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F9F9E5161BE21B86001F1163 /* HFTagContainerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F9E5151BE21B86001F1163 /* HFTagContainerSpec.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,12 +36,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0F9B53A40D8BA2A04A0803DC /* Pods_HFTAGManager_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HFTAGManager_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		132E7D03FA92BACFECC19B3D /* libPods-HFTAGManager_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HFTAGManager_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF4DAE0A97F1EC2F4C810C1 /* Pods-HFTAGManager_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HFTAGManager_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HFTAGManager_Tests/Pods-HFTAGManager_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		1C59920F1569099FE7987E6E /* Pods-HFTAGManager_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HFTAGManager_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HFTAGManager_Example/Pods-HFTAGManager_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		29044864773E56C4AE136416 /* Pods_HFTAGManager_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HFTAGManager_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B7EFAB25B04207B859EF172 /* Pods-HFTAGManager_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HFTAGManager_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-HFTAGManager_Example/Pods-HFTAGManager_Example.release.xcconfig"; sourceTree = "<group>"; };
-		6003F58A195388D20070C39A /* HFTAGManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = HFTAGManager.app; path = HFTAGManager_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D88C2D03D8ED10B65734A63 /* libPods-HFTAGManager_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HFTAGManager_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F58A195388D20070C39A /* HFTAGManager_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HFTAGManager_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -54,17 +54,17 @@
 		6003F5A5195388D20070C39A /* HFTAGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HFTAGViewController.h; sourceTree = "<group>"; };
 		6003F5A6195388D20070C39A /* HFTAGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HFTAGViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6003F5AE195388D20070C39A /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Tests.xctest; path = HFTAGManager_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6003F5AE195388D20070C39A /* HFTAGManager_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HFTAGManager_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		820F4899160AF0ECCF9FAA90 /* Pods-HFTAGManager_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HFTAGManager_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HFTAGManager_Tests/Pods-HFTAGManager_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		AF2FA487C2A2B3E5F4D9B49A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		C893FFEFFFDAC9970BCE553F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		F85F84824DFCD6DA8534759B /* HFTAGManager.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HFTAGManager.podspec; path = ../HFTAGManager.podspec; sourceTree = "<group>"; };
+		F9F9E5151BE21B86001F1163 /* HFTagContainerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTagContainerSpec.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				9976D537E9A55CBBC91E588F /* Pods_HFTAGManager_Example.framework in Frameworks */,
+				5F60B33E02D1BE0F22961C1F /* libPods-HFTAGManager_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				548CC0DC047CAF918F23AFCD /* Pods_HFTAGManager_Tests.framework in Frameworks */,
+				0B2A8CEAB6C72D4AA3D433CC /* libPods-HFTAGManager_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,8 +108,8 @@
 		6003F58B195388D20070C39A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58A195388D20070C39A /* HFTAGManager.app */,
-				6003F5AE195388D20070C39A /* Tests.xctest */,
+				6003F58A195388D20070C39A /* HFTAGManager_Example.app */,
+				6003F5AE195388D20070C39A /* HFTAGManager_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -121,8 +121,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				29044864773E56C4AE136416 /* Pods_HFTAGManager_Example.framework */,
-				0F9B53A40D8BA2A04A0803DC /* Pods_HFTAGManager_Tests.framework */,
+				132E7D03FA92BACFECC19B3D /* libPods-HFTAGManager_Example.a */,
+				5D88C2D03D8ED10B65734A63 /* libPods-HFTAGManager_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -156,7 +156,7 @@
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				6003F5BB195388D20070C39A /* Tests.m */,
+				F9F9E5151BE21B86001F1163 /* HFTagContainerSpec.m */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
 			);
 			path = Tests;
@@ -213,7 +213,7 @@
 			);
 			name = HFTAGManager_Example;
 			productName = HFTAGManager;
-			productReference = 6003F58A195388D20070C39A /* HFTAGManager.app */;
+			productReference = 6003F58A195388D20070C39A /* HFTAGManager_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6003F5AD195388D20070C39A /* HFTAGManager_Tests */ = {
@@ -234,7 +234,7 @@
 			);
 			name = HFTAGManager_Tests;
 			productName = HFTAGManagerTests;
-			productReference = 6003F5AE195388D20070C39A /* Tests.xctest */;
+			productReference = 6003F5AE195388D20070C39A /* HFTAGManager_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -244,7 +244,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = HFTAG;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Hai Feng Kao";
 				TargetAttributes = {
 					6003F5AD195388D20070C39A = {
@@ -400,7 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5BC195388D20070C39A /* Tests.m in Sources */,
+				F9F9E5161BE21B86001F1163 /* HFTagContainerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +452,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -516,6 +517,7 @@
 				GCC_PREFIX_HEADER = "HFTAGManager/HFTAGManager-Prefix.pch";
 				INFOPLIST_FILE = "HFTAGManager/HFTAGManager-Info.plist";
 				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -531,6 +533,7 @@
 				GCC_PREFIX_HEADER = "HFTAGManager/HFTAGManager-Prefix.pch";
 				INFOPLIST_FILE = "HFTAGManager/HFTAGManager-Info.plist";
 				MODULE_NAME = ExampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -553,6 +556,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HFTAGManager_Example.app/HFTAGManager_Example";
 				WRAPPER_EXTENSION = xctest;
@@ -572,6 +576,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				INFOPLIST_FILE = "Tests/Tests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HFTAGManager_Example.app/HFTAGManager_Example";
 				WRAPPER_EXTENSION = xctest;

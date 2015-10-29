@@ -9,6 +9,17 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+```objc
+HFTAGRule* rule = [[HFTAGRule alloc] initWithBlock:^[(TagRule* rule){
+    NSPredicate *purchased = [NSPredicate predicateWithFormat:@"SELF.isPurchased MATCHES %@", @"1"];
+    [rule setPredicate:purchased rule:@{@"gift":@"apple"}];
+
+    // not purchased
+    [rule setPredicate:nil rule:@{@"gift":@"nothing"}];
+}];
+NSDictionary* gift = [container dictionaryForKey:@"specialGift" defaultRule:rule];
+```
+
 ## Requirements
 
 ## Installation
