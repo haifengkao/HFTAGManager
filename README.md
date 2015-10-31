@@ -1,6 +1,7 @@
 # HFTAGManager
 
-[![CI Status](http://img.shields.io/travis/Hai Feng Kao/HFTAGManager.svg?style=flat)](https://travis-ci.org/Hai Feng Kao/HFTAGManager)
+[![CI Status](http://img.shields.io/travis/haifengkao/HFTAGManager.svg?style=flat)](https://travis-ci.org/haifengkao/HFTAGManager)
+[![Coverage Status](https://coveralls.io/repos/haifengkao/HFTAGManager/badge.svg?branch=master&service=github)](https://coveralls.io/github/haifengkao/HFTAGManager?branch=master)
 [![Version](https://img.shields.io/cocoapods/v/HFTAGManager.svg?style=flat)](http://cocoapods.org/pods/HFTAGManager)
 [![License](https://img.shields.io/cocoapods/l/HFTAGManager.svg?style=flat)](http://cocoapods.org/pods/HFTAGManager)
 [![Platform](https://img.shields.io/cocoapods/p/HFTAGManager.svg?style=flat)](http://cocoapods.org/pods/HFTAGManager)
