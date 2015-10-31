@@ -86,9 +86,10 @@ typedef enum {
                     refreshType:(HFTAGContainerCallbackRefreshType)refreshType;
 
 
-- (NSDictionary*)containerContentForData:(NSData*)data;
-
-- (NSDictionary*)userInfoForData:(NSData*)data;
+- (void)loadContainerWithId:(NSString*)containerId
+                    content:(void(^)(NSDictionary*))content
+                   userInfo:(void(^)(NSDictionary*))userInfo
+                      error:(void(^)(NSError*))error;
 @end
 
 /**

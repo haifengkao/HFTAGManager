@@ -36,6 +36,47 @@
     return self;
 }
 
+- (HFTAGContainer *)openContainerById:(NSString *)containerId
+                             callback:(id <HFTAGContainerCallback>)callback
+{
+    NSParameterAssert(containerId.length > 0);
+    
+    if (self.containers[containerId]) {
+//        * If TAGManager::openContainerById:callback: is called a second time for a
+//        * given <code>containerId</code>, <code>nil</code> will be returned unless
+//        * the previous opened container has already been closed.
+        return nil;
+    }
+    
+    HFTAGContainer* container = [[HFTAGContainer alloc] init];
+
+    // load data from cache
+    container.dataLayer = self.dataLayer;
+    
+    [callback containerRefreshBegin:container refreshType:kTAGContainerCallbackRefreshTypeNetwork];
+    
+    @weakify(container);
+    [callback loadContainerWithId:containerId
+                          content:^(NSDictionary* content){
+                              @strongify(container);
+                              container.container = content;
+                              [callback containerRefreshSuccess:container refreshType:kTAGContainerCallbackRefreshTypeNetwork];
+                          }
+                         userInfo:^(NSDictionary* userInfo){
+                              @strongify(container);
+                              container.userInfo = userInfo;
+                         }
+                            error:^(NSError* error) {
+                                 //don't need to do anything
+                                 [callback containerRefreshFailure:container
+                                                           failure:kTAGContainerCallbackRefreshFailureNetworkError
+                                                       refreshType:kTAGContainerCallbackRefreshTypeNetwork];
+                            }];
+
+    self.containers[containerId] = container;
+    return container;
+}
+
 #if 0
 - (HFTAGContainer *)openContainerById:(NSString *)containerId
                                   url:(NSURL*)containerUrl
@@ -94,6 +135,7 @@
 }
 #endif
 
+#if 0
 - (NSDictionary*)dictionaryForId:(NSString*)containerId callback:(id<HFTAGContainerCallback>)callback
 {
     NSDictionary* data = [[NSUserDefaults standardUserDefaults] objectForKey:containerId];
@@ -103,7 +145,6 @@
     
 }
 
-#if 0
 - (void)saveData:(NSData*)data forContainerId:(NSString*)containerId
 {
     NSDictionary* res = [NSJSONSerialization JSONObjectWithData:data

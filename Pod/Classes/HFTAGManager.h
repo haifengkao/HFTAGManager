@@ -45,10 +45,6 @@ typedef NS_ENUM(NSUInteger, TAGDispatchResult) {
     kTAGDispatchError
 };
 
-@protocol HFTAGManagerCallback <NSObject>
-
-@end
-
 /**
  * A class that is the mobile implementation of Google Tag Manager (GTM).
  *
@@ -167,7 +163,6 @@ typedef NS_ENUM(NSUInteger, TAGDispatchResult) {
  * @return The opened container.
  */
 - (HFTAGContainer *)openContainerById:(NSString *)containerId
-                                  url:(NSURL*)containerUrl
                              callback:(id <HFTAGContainerCallback>)callback;
 /**
  * Returns the container associated with the given <code>containerId</code>;
