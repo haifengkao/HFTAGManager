@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = "HFTAGManager"
   s.version          = "0.1.0"
-  s.summary          = "A short description of HFTAGManager."
+  s.summary          = "a open source Google Tag Manager clone for iOS."
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,6 +17,8 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
+                        A configuration tool to change iOS Apps' behavior on the fly. 
+                        If you want to host Google Tag Manager on your own, this is the tool of choice.                         
                        DESC
 
   s.homepage         = "https://github.com/haifengkao/HFTAGManager"

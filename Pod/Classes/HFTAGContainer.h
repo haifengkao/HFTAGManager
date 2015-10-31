@@ -128,7 +128,7 @@ typedef enum {
  *
  * @param key The key to lookup for the configuration value.
  */
-- (BOOL)booleanForKey:(NSString *)key defaultRule:(id)rule;;
+//- (BOOL)booleanForKey:(NSString *)key defaultRule:(id)rule;;
 
 /**
  * Returns a <code>double</code> representing the configuration value for the
@@ -136,7 +136,7 @@ typedef enum {
  *
  * @param key The key to lookup for the configuration value.
  */
-- (double)doubleForKey:(NSString *)key defaultRule:(id)rule;;
+//- (double)doubleForKey:(NSString *)key defaultRule:(id)rule;;
 
 /**
  * Returns an <code>int64_t</code> representing the configuration value for the
@@ -144,7 +144,7 @@ typedef enum {
  *
  * @param key The key to lookup for the configuration value.
  */
-- (int64_t)int64ForKey:(NSString *)key defaultRule:(id)rule;
+//- (int64_t)int64ForKey:(NSString *)key defaultRule:(id)rule;
 
 /**
  * Returns an <code>NSString</code> to represent the configuration value for the
@@ -153,7 +153,7 @@ typedef enum {
  *
  * @param key The key to lookup for the configuration value.
  */
-- (NSString *)stringForKey:(NSString *)key defaultRule:(id)rule;
+//- (NSString *)stringForKey:(NSString *)key defaultRule:(id)rule;
 
 /**
  * Returns whether this is a default container, or one refreshed from the

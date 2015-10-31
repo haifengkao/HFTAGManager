@@ -62,7 +62,10 @@ static inline id safe_cast_helper(id x, Class c) {
             self.block(self);
         }
         
+#ifdef DEBUG
+        // doesn't allow same conditions in debug mode
         NSMutableSet* mutableSet = [[NSMutableSet alloc] init];
+#endif
         
         NSMutableArray* configs = [NSMutableArray new];
         for (NSArray* rule in self.rules.reverseObjectEnumerator.allObjects) {
