@@ -22,6 +22,7 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		F93242AA1BE25F9A002C3901 /* HFTAGManagerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F93242A91BE25F9A002C3901 /* HFTAGManagerSpec.m */; };
 		F9F9E5161BE21B86001F1163 /* HFTagContainerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9F9E5151BE21B86001F1163 /* HFTagContainerSpec.m */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		AF2FA487C2A2B3E5F4D9B49A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		C893FFEFFFDAC9970BCE553F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		F85F84824DFCD6DA8534759B /* HFTAGManager.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = HFTAGManager.podspec; path = ../HFTAGManager.podspec; sourceTree = "<group>"; };
+		F93242A91BE25F9A002C3901 /* HFTAGManagerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTAGManagerSpec.m; sourceTree = "<group>"; };
 		F9F9E5151BE21B86001F1163 /* HFTagContainerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HFTagContainerSpec.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +160,7 @@
 			children = (
 				F9F9E5151BE21B86001F1163 /* HFTagContainerSpec.m */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
+				F93242A91BE25F9A002C3901 /* HFTAGManagerSpec.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9F9E5161BE21B86001F1163 /* HFTagContainerSpec.m in Sources */,
+				F93242AA1BE25F9A002C3901 /* HFTAGManagerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
