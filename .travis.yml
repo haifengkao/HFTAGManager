@@ -8,7 +8,8 @@ before_install:
   - "brew uninstall xctool; brew install xctool --HEAD;"
   - gem i cocoapods --no-ri --no-rdoc
   - "gem install slather --no-rdoc --no-ri --no-document --quiet"
-xcode_workspace: Example/HFTAGManager.xcworkspace
-xcode_scheme: HFTAGManager-Example
-xcode_sdk: iphonesimulator
+#xcode_workspace: Example/HFTAGManager.xcworkspace
+#xcode_scheme: HFTAGManager-Example
+#xcode_sdk: iphonesimulator
+script: xctool test -workspace Example/HFTAGManager.xcworkspace -scheme HFTAGManager-Example GCC_INSTRUMENT_PROGRAM_FLOW_ARCS=YES GCC_GENERATE_TEST_COVERAGE_FILES=YES
 after_success: slather
