@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <RACSignal.h>
+#import <ReactiveCocoa/RACSignal.h>
 /**
  * The data layer is a dictionary holding generic information about the
  * application. It uses a standard set of keys so it can be read by any party

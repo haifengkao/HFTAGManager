@@ -8,8 +8,8 @@
 
 #import "HFTAGContainer.h"
 #import "HFTAGRule.h"
-#import "RACEXTScope.h"
-#import <ReactiveCocoa.h>
+#import <ReactiveCocoa/RACEXTScope.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 #ifndef SAFE_CAST
 #define SAFE_CAST(Object, Type) (Type *)safe_cast_helper(Object, [Type class])

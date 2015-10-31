@@ -7,7 +7,7 @@
 //
 
 #import "HFTAGManager.h"
-
+#import <ReactiveCocoa/RACEXTScope.h>
 
 @interface HFTAGManager()
 @property (nonatomic, strong) HFTAGDataLayer *dataLayer;
