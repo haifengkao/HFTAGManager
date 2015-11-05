@@ -21,7 +21,9 @@ flags = [
 '-I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include',
 '-I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/7.0.0/include',
 '-I/Library/Developer/CommandLineTools/usr/include',
-'-I./Example/Pods/Headers/Public',
+'-ISUB./Example/Pods/Headers/Public',
+#custom definition, include subfolders
+'-ISUB./Pods/Headers/Public',
 '-I./Pod/Classes',
 '-isysroot',
 '/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk',
@@ -53,9 +55,49 @@ def DirectoryOfThisScript():
   return os.path.dirname( os.path.abspath( __file__ ) )
 
 
+def Subdirectories(directory):
+  res = []
+  for path, subdirs, files in os.walk(directory):
+    for name in subdirs:
+      item = os.path.join(path, name)
+      res.append(item)
+  return res
+
+def IncludeFlagsOfSubdirectory( flags, working_directory ):
+  if not working_directory:
+    return list( flags )
+  new_flags = []
+  make_next_include_subdir = False
+  path_flags = [ '-ISUB']
+  for flag in flags:
+    # include the directory of flag as well
+    new_flag = [flag.replace('-ISUB', '-I')]
+
+    if make_next_include_subdir:
+      make_next_include_subdir = False
+      for subdir in Subdirectories(os.path.join(working_directory, flag)):
+        new_flag.append('-I')
+        new_flag.append(subdir)
+
+    for path_flag in path_flags:
+      if flag == path_flag:
+        make_next_include_subdir = True
+        break
+
+      if flag.startswith( path_flag ):
+        path = flag[ len( path_flag ): ]
+        for subdir in Subdirectories(os.path.join(working_directory, path)):
+            new_flag.append('-I' + subdir)
+        break
+
+    new_flags =new_flags + new_flag
+  return new_flags
+
 def MakeRelativePathsInFlagsAbsolute( flags, working_directory ):
   if not working_directory:
     return list( flags )
+  #add include subfolders as well
+  flags = IncludeFlagsOfSubdirectory( flags, working_directory )
   new_flags = []
   make_next_absolute = False
   path_flags = [ '-isystem', '-I', '-iquote', '--sysroot=' ]
@@ -120,10 +162,10 @@ def FlagsForFile( filename, **kwargs ):
     # NOTE: This is just for YouCompleteMe; it's highly likely that your project
     # does NOT need to remove the stdlib flag. DO NOT USE THIS IN YOUR
     # ycm_extra_conf IF YOU'RE NOT 100% SURE YOU NEED IT.
-    try:
-      final_flags.remove( '-stdlib=libc++' )
-    except ValueError:
-      pass
+    # try:
+      # final_flags.remove( '-stdlib=libc++' )
+    # except ValueError:
+      # pass
   else:
     relative_to = DirectoryOfThisScript()
     final_flags = MakeRelativePathsInFlagsAbsolute( flags, relative_to )
@@ -132,3 +174,19 @@ def FlagsForFile( filename, **kwargs ):
     'flags': final_flags,
     'do_cache': True
   }
+
+# if __name__ == '__main__':
+    # # res = subdirectory( DirectoryOfThisScript())
+  # flags = [
+  # '-D__IPHONE_OS_VERSION_MIN_REQUIRED=70000',
+  # '-x',
+  # 'objective-c',
+  # '-F/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks',
+  # '-ISUB./Pods/Headers/Public',
+  # '-MMD',
+  # ]
+
+  # print IncludeFlagsOfSubdirectory( flags, DirectoryOfThisScript() )
+
+
+
