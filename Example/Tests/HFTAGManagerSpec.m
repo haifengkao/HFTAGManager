@@ -2,8 +2,8 @@
 //  HFTAGManagerSpec.m
 //  HFTAGManager
 //
-//  Created by Lono on 2015/10/29.
-//  Copyright 2015年 Hai Feng Kao. All rights reserved.
+//  Created by Hai Feng Kao on 2015/10/29.
+//  Copyright 2015 Hai Feng Kao. All rights reserved.
 //
 
 #import <Kiwi/Kiwi.h>

@@ -1,8 +1,8 @@
 //
 //  HFTAGManager.m
-//  1piece
+//  HFTAGManager
 //
-//  Created by Lono on 2015/10/3.
+//  Created by Hai Feng Kao on 2015/10/3.
 //
 //
 

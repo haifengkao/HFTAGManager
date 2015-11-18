@@ -2,7 +2,7 @@
 //  HFTAGRule.h
 //  Pods
 //
-//  Created by Lono on 2015/9/22.
+//  Created by Hai Feng Kao on 2015/9/22.
 //
 //
 
