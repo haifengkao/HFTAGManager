@@ -32,7 +32,11 @@
 
 - (void)pushValue:(NSObject*)value forKey:(NSObject<NSCopying>*)key
 {
-    [self push:@{key:value}];
+    NSParameterAssert(value);
+    NSParameterAssert(key);
+    if (key && value) {
+        [self push:@{key:value}];
+    } 
 }
 
 - (void)push:(NSDictionary*)update
