@@ -106,7 +106,6 @@
 		3B7D32B540634468356A05B24E76A1C8 /* NSProxy+KiwiVerifierAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C97596EF6351366EA23A6B0C0B01B74 /* NSProxy+KiwiVerifierAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C181C4BE2BE092D4579C3AC4CC0CEB6 /* KWHaveValueMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 099D4BF7A1D9A1B5582A0D7EE1C79980 /* KWHaveValueMatcher.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		3C5CCE9C59BB87A4B7759B0534D1EDCF /* KWBlockNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A064F691FAE4247D23C96A7A1C87826 /* KWBlockNode.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		3D566941793A50B7A31F15EF523D52A4 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 7858116F702C11B9F21D077D5E9244E8 /* ReplaceMe.m */; };
 		3DB78AD0A884F65ABE62F83B56C7D268 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E780AAFE1759A50676A78A8CD57AE3C6 /* Foundation.framework */; };
 		3EE120523C61EAFDBB4C74258F62535A /* NSIndexSet+RACSequenceAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C738314250EB8F4E5E138DC64B59AD62 /* NSIndexSet+RACSequenceAdditions.m */; };
 		3EEA32F2C24C68308A490D47FD1976C2 /* KWStringPrefixMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7801711BD2F8E3565B0F8FD3E16ADD /* KWStringPrefixMatcher.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
@@ -620,7 +619,6 @@
 		76C016F1B5BA64E0488BD10DF85A0A2D /* KWNull.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KWNull.m; path = Classes/Core/KWNull.m; sourceTree = "<group>"; };
 		77336DACC6167764E0F22A79D475B345 /* KWReceiveMatcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KWReceiveMatcher.m; path = Classes/Matchers/KWReceiveMatcher.m; sourceTree = "<group>"; };
 		7788098736D80BE9F28B1B911DC6AF4F /* UIControl+RACSignalSupportPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIControl+RACSignalSupportPrivate.h"; path = "ReactiveCocoa/UIControl+RACSignalSupportPrivate.h"; sourceTree = "<group>"; };
-		7858116F702C11B9F21D077D5E9244E8 /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ReplaceMe.m; sourceTree = "<group>"; };
 		79196A5FABFD89F2F0C7D225280F26EA /* KWBeEmptyMatcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KWBeEmptyMatcher.h; path = Classes/Matchers/KWBeEmptyMatcher.h; sourceTree = "<group>"; };
 		79B4D851AA625385A16BF3BA8057FDD9 /* KWCallSite.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KWCallSite.h; path = Classes/Core/KWCallSite.h; sourceTree = "<group>"; };
 		79BEB86F3794CB5070EBE88CECE84D85 /* KWSymbolicator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KWSymbolicator.h; path = Classes/Core/KWSymbolicator.h; sourceTree = "<group>"; };
@@ -939,7 +937,6 @@
 				D5BB4ADCCEE68F9A20CC8FC0433A8B14 /* HFTAGManager.m */,
 				C727180A7F2247E3EBDE04D94646ED8C /* HFTAGRule.h */,
 				D1844582FBDFC16C979041A13EE51F96 /* HFTAGRule.m */,
-				7858116F702C11B9F21D077D5E9244E8 /* ReplaceMe.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1939,7 +1936,6 @@
 				674BF2AD27B618ED98D1275DA23F3DE0 /* HFTAGManager-dummy.m in Sources */,
 				11EB59111A5F01A02ADB5CABF041AA75 /* HFTAGManager.m in Sources */,
 				34D33BA3F9E7041E5FC34E67295ADA42 /* HFTAGRule.m in Sources */,
-				3D566941793A50B7A31F15EF523D52A4 /* ReplaceMe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
