@@ -86,10 +86,8 @@ typedef enum {
                     refreshType:(HFTAGContainerCallbackRefreshType)refreshType;
 
 
-- (void)loadContainerWithId:(NSString*)containerId
-                    content:(void(^)(NSDictionary*))content
-                   userInfo:(void(^)(NSDictionary*))userInfo
-                      error:(void(^)(NSError*))error;
+- (void)loadContainer:(HFTAGContainer*)container
+                error:(void(^)(NSError*))error;
 @end
 
 /**
@@ -115,6 +113,8 @@ typedef enum {
 
 - (NSDictionary*)dictionaryForKey:(NSString *)key defaultRule:(id)rule;
 - (NSArray*)arrayForKey:(NSString *)key defaultRule:(id)rule;
+
+- (instancetype)initWithId:(NSString*)containerId NS_DESIGNATED_INITIALIZER;
 // @cond
 /**
  * Containers should be instantiated through TAGManager or TAGContainerOpener.
@@ -164,8 +164,9 @@ typedef enum {
 // unit test only
 @property(atomic, copy, readonly) NSString* updateId;
 @property NSCache* ruleCache; // store the rules retrieved from remote server
-@property (nonatomic) HFTAGDataLayer* dataLayer; // we provide our own atomic implementation
-@property (nonatomic) NSDictionary* container; // store the rules retrieved from remote server. we provide our own atomic implenmentation
+- (void)setDataLayer:(HFTAGDataLayer *)dataLayer;
+- (NSDictionary*)container; // store the rules retrieved from remote server. we provide our own atomic implenmentation
+- (void)setContainer:(NSDictionary *)container;
 @property (atomic) NSDictionary* userInfo; // store the rules retrieved from remote server. we provide our own atomic implenmentation
 
 - (RACSignal*)dataChangeSignal;

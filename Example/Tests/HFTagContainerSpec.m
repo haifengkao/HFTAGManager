@@ -15,7 +15,7 @@ SPEC_BEGIN(HFTAGContainerSpec)
 describe(@"HFTAGContainer", ^{
     __block HFTAGContainer* container;
     beforeEach(^{ // Occurs before each enclosed "it"
-        container = [HFTAGContainer new];
+        container = [[HFTAGContainer alloc] initWithId:@"dummy"];
         
     });
 

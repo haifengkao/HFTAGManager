@@ -9,4 +9,5 @@ target 'HFTAGManager_Tests', :exclusive => true do
   #pod "HFTAGManager", :path => "../"
 
   pod 'Kiwi'
+  pod 'LeakCanaryiOS'
 end

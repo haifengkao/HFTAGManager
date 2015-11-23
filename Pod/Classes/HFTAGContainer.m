@@ -18,20 +18,35 @@ static inline id safe_cast_helper(id x, Class c) {
 }
 #endif
 
-@interface HFTAGContainer()
+@interface HFTAGContainer(){
+    __weak HFTAGDataLayer* _dataLayer;
+    NSDictionary* _container;
+}
 
 @property RACDisposable* dataLayerDisposable;
 @property RACSubject* changeSignal;
 
+@property(readwrite, nonatomic, copy) NSString *containerId;
+- (HFTAGDataLayer*) dataLayer; // we provide our own atomic implementation
 @end
 
 @implementation HFTAGContainer
 - (instancetype)init
 {
+   
+    if (self = [self initWithId:@"dummy"]) {
+        NSAssert(NO, @"Containers should be instantiated through TAGManager or TAGContainerOpener.");
+    }
+    
+    return self;
+}
+
+- (instancetype)initWithId:(NSString*)containerId
+{
     if (self = [super init]) {
         self.ruleCache = [NSCache new];
+        self.containerId = containerId;
         _changeSignal = [RACSubject subject];
-
     }
     
     return self;
@@ -40,6 +55,13 @@ static inline id safe_cast_helper(id x, Class c) {
 - (void)dealloc
 {
     [_changeSignal sendCompleted];
+}
+
+- (HFTAGDataLayer*)dataLayer
+{
+    @synchronized(self) {
+        return _dataLayer;
+    }
 }
 
 - (void)setDataLayer:(HFTAGDataLayer *)dataLayer
@@ -60,12 +82,18 @@ static inline id safe_cast_helper(id x, Class c) {
     };
 }
 
+- (NSDictionary*)container
+{
+    @synchronized(self) {
+        return _container;
+    }
+}
 - (void)setContainer:(NSDictionary *)container
 {
     @synchronized(self) {
         _container = [container copy];
         
-        // container update. we should clear cache
+        // container update. We should clear cache
         [self.ruleCache removeAllObjects];
         [self.changeSignal sendNext:self];
     }
@@ -91,7 +119,7 @@ static inline id safe_cast_helper(id x, Class c) {
                 isValidRule = YES;
             } else {
                 NSPredicate* predicate = [NSPredicate predicateWithFormat:predStr];
-                if ([predicate evaluateWithObject:self.dataLayer.datalayer]) {
+                if ([predicate evaluateWithObject:[self dataLayer].datalayer]) {
                     isValidRule = YES;
                 }
             }
@@ -105,6 +133,16 @@ static inline id safe_cast_helper(id x, Class c) {
     return nil;
 }
 
+
+/** 
+  * return the config value for the specified key
+  * 
+  * @param key the config's key
+  * @param rule the default rule
+  * 
+  * @return nil if no rule is found 
+  * @return the config value in the container
+  */
 - (id)configForKey:(NSString*)key tagRule:(id)rule
 {
     // check rule in remote

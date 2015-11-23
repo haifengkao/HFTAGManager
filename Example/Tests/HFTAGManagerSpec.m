@@ -8,11 +8,12 @@
 
 #import <Kiwi/Kiwi.h>
 #import "HFTAGManager.h"
+#import "LeakCanary.h"
+#import <ReactiveCocoa/RACEXTScope.h>
 
 @interface ManagerTest : NSObject <HFTAGContainerCallback>
-@property NSDictionary* content;
-@property NSDictionary* userInfo;
 @property (assign) BOOL done;
+@property NSDictionary* content;
 @end
 
 @implementation ManagerTest
@@ -34,41 +35,42 @@
 {
 }
 
-- (void)loadContainerWithId:(NSString*)containerId
-                   content:(void(^)(NSDictionary*))content
-                  userInfo:(void(^)(NSDictionary*))userInfo
-                     error:(void(^)(NSError*))error
+- (void)loadContainer:(HFTAGContainer*)container
+                error:(void(^)(NSError*))error
 {
     self.content = @{@"hello": @"world"};
-    content(self.content);
-    userInfo(nil);
+    container.container = self.content;
     error(nil);
 }
 @end
 
 SPEC_BEGIN(HFTAGManagerSpec)
 
-beforeAll(^{
-});
-afterAll(^{
-});
-afterEach(^{
-});
-
 describe(@"HFTAGManager", ^{
     __block HFTAGManager* manager;
     __block ManagerTest* callback;
     beforeEach(^{ // Occurs before each enclosed "it"
-        manager = [HFTAGManager instance];
+        [LeakCanary beginSnapShot:@[@"HF"]];
+        manager = [HFTAGManager new];
         callback = [[ManagerTest alloc] init];
+    });
+
+    afterEach(^{
+        NSSet* leakedObjects = [LeakCanary endSnapShot];
         
+        [[expectFutureValue(leakedObjects) should] beEmpty];
     });
     
     it(@"should open container", ^{
+        @autoreleasepool{
         [manager openContainerById:@"unit test" callback:callback];
+        [[expectFutureValue(@(callback.done)) shouldEventually] beYes];
         
-         [[expectFutureValue(@(callback.done)) shouldEventually] beYes];
+        manager = nil;
+        callback = nil;
+        }
     });
+    
 });
 
 SPEC_END

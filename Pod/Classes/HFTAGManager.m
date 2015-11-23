@@ -8,12 +8,19 @@
 
 #import "HFTAGManager.h"
 #import <ReactiveCocoa/RACEXTScope.h>
+#import <ReactiveCocoa/ReactiveCocoa.h>
+
+#ifndef SAFE_CAST
+#define SAFE_CAST(Object, Type) (Type *)safe_cast_helper(Object, [Type class])
+static inline id safe_cast_helper(id x, Class c) {
+    return [x isKindOfClass:c] ? x : nil;
+}
+#endif
 
 @interface HFTAGManager()
 @property (nonatomic, strong) HFTAGDataLayer *dataLayer;
 @end
 
-#define APP_VERSION_KEY @"AppVersionKey"
 @implementation HFTAGManager
 
 + (instancetype)instance {
@@ -48,32 +55,37 @@
         return nil;
     }
     
-    HFTAGContainer* container = [[HFTAGContainer alloc] init];
+    HFTAGContainer* container = [[HFTAGContainer alloc] initWithId:containerId];
+
+    @weakify(callback)
+    RACSignal* isContainerNonEmpty = [container.dataChangeSignal filter:^BOOL(id value){
+        HFTAGContainer* ref = SAFE_CAST(value, HFTAGContainer);
+        return ref.container != nil;
+    }];
+    @weakify(container)
+    [[container.dataChangeSignal takeUntil:isContainerNonEmpty] 
+                                              subscribeCompleted:^()
+    {
+        @strongify(callback);
+        @strongify(container);
+        [callback containerRefreshSuccess:container refreshType:kTAGContainerCallbackRefreshTypeNetwork];
+    }];
 
     // load data from cache
     container.dataLayer = self.dataLayer;
-    
+    self.containers[containerId] = container;
+
     [callback containerRefreshBegin:container refreshType:kTAGContainerCallbackRefreshTypeNetwork];
     
-    @weakify(container);
-    [callback loadContainerWithId:containerId
-                          content:^(NSDictionary* content){
-                              @strongify(container);
-                              container.container = content;
-                              [callback containerRefreshSuccess:container refreshType:kTAGContainerCallbackRefreshTypeNetwork];
-                          }
-                         userInfo:^(NSDictionary* userInfo){
-                              @strongify(container);
-                              container.userInfo = userInfo;
-                         }
-                            error:^(NSError* error) {
-                                 //don't need to do anything
-                                 [callback containerRefreshFailure:container
-                                                           failure:kTAGContainerCallbackRefreshFailureNetworkError
-                                                       refreshType:kTAGContainerCallbackRefreshTypeNetwork];
-                            }];
+    [callback loadContainer:container
+                      error:^(NSError* error) {
+                            @strongify(container);
+                            //don't need to do anything
+                            [callback containerRefreshFailure:container
+                                                      failure:kTAGContainerCallbackRefreshFailureNetworkError
+                                                  refreshType:kTAGContainerCallbackRefreshTypeNetwork];
+                      }];
 
-    self.containers[containerId] = container;
     return container;
 }
 

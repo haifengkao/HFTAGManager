@@ -32,3 +32,5 @@ Carthage
 #
 # Pods/
 .ycm_extra_conf.pyc
+*.gcda
+*.gcno
