@@ -200,10 +200,44 @@ static inline id safe_cast_helper(id x, Class c) {
     return res;
 }
 
+- (NSString *)stringForKey:(NSString *)key defaultRule:(id)rule
+{
+    NSString* res = SAFE_CAST([self.ruleCache objectForKey:key], NSString);
+    if (res) {
+        return res;
+    }
+    
+    id val = [self configForKey:key tagRule:rule];
+    res = SAFE_CAST(val, NSString)? val : rule;
+    
+    if (res) {
+        [self.ruleCache setObject:res forKey:key];
+    }
+    
+    return res;
+}
+
 /**
  * Returns whether this is a default container, or one refreshed from the
  * server.
  */
+- (NSNumber *)numberForKey:(NSString *)key defaultRule:(id)rule
+{
+    NSNumber* res = SAFE_CAST([self.ruleCache objectForKey:key], NSNumber);
+    if (res) {
+        return res;
+    }
+    
+    id val = [self configForKey:key tagRule:rule];
+    res = SAFE_CAST(val, NSNumber)? val : rule;
+    
+    if (res) {
+        [self.ruleCache setObject:res forKey:key];
+    }
+    
+    return res;
+}
+
 - (BOOL)isDefault
 {
     return self.container.count <= 0;

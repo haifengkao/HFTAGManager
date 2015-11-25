@@ -27,7 +27,7 @@
 
 - (void)dealloc
 {
-    [self.changeSignal sendCompleted];
+    [_changeSignal sendCompleted];
 }
 
 - (void)pushValue:(NSObject*)value forKey:(NSObject<NSCopying>*)key

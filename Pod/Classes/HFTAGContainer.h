@@ -123,6 +123,14 @@ typedef enum {
 // @endcond
 
 /**
+ * Returns a <code>NSNumber</code> representing the configuration value for the
+ * given key. If the container has no value for this key, NO will be returned.
+ *
+ * @param key The key to lookup for the configuration value.
+ */
+- (NSNumber *)numberForKey:(NSString *)key defaultRule:(id)rule;
+
+/**
  * Returns a <code>BOOL</code> representing the configuration value for the
  * given key. If the container has no value for this key, NO will be returned.
  *
@@ -153,7 +161,7 @@ typedef enum {
  *
  * @param key The key to lookup for the configuration value.
  */
-//- (NSString *)stringForKey:(NSString *)key defaultRule:(id)rule;
+- (NSString *)stringForKey:(NSString *)key defaultRule:(id)rule;
 
 /**
  * Returns whether this is a default container, or one refreshed from the

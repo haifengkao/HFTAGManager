@@ -49,6 +49,17 @@ static inline id safe_cast_helper(id x, Class c) {
     }
 }
 
+- (id)defaultRule
+{
+    NSArray* rules = self.configs;
+    NSArray* rule = rules.lastObject;
+    if (rule.count >= 2) {
+        return rule[1];
+    }
+    
+    return nil;
+}
+
 - (NSArray*)configs
 {
     @synchronized(self) {
