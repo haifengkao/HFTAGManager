@@ -146,7 +146,9 @@ static inline id safe_cast_helper(id x, Class c) {
 - (id)configForKey:(NSString*)key tagRule:(id)rule
 {
     // check rule in remote
-    NSArray* rules = self.container[key];
+    NSArray* rules = SAFE_CAST(self.container[key], NSArray);
+    
+    NSAssert(rules || (self.container[key] == 0), @"the rule's format is @[@[@\"some_predicate_1\", the_actual_value_1], @[@\"some_predicate_2\", the_actual_value_2]]");
     
     id config = [self findValidConfig:rules];
     
@@ -174,7 +176,7 @@ static inline id safe_cast_helper(id x, Class c) {
     }
     
     id val = [self configForKey:key tagRule:rule];
-    res = SAFE_CAST(val, NSDictionary)? val : rule;
+    res = SAFE_CAST(val, NSDictionary)? val : SAFE_CAST(rule, NSDictionary);
     
     if (res) {
         [self.ruleCache setObject:res forKey:key];
@@ -191,7 +193,7 @@ static inline id safe_cast_helper(id x, Class c) {
     }
     
     id val = [self configForKey:key tagRule:rule];
-    res = SAFE_CAST(val, NSArray)? val : rule;
+    res = SAFE_CAST(val, NSArray)? val : SAFE_CAST(rule, NSArray);
     
     if (res) {
         [self.ruleCache setObject:res forKey:key];
@@ -208,7 +210,7 @@ static inline id safe_cast_helper(id x, Class c) {
     }
     
     id val = [self configForKey:key tagRule:rule];
-    res = SAFE_CAST(val, NSString)? val : rule;
+    res = SAFE_CAST(val, NSString)? val : SAFE_CAST(rule, NSString);
     
     if (res) {
         [self.ruleCache setObject:res forKey:key];
@@ -229,7 +231,7 @@ static inline id safe_cast_helper(id x, Class c) {
     }
     
     id val = [self configForKey:key tagRule:rule];
-    res = SAFE_CAST(val, NSNumber)? val : rule;
+    res = SAFE_CAST(val, NSNumber)? val : SAFE_CAST(rule, NSNumber);
     
     if (res) {
         [self.ruleCache setObject:res forKey:key];
