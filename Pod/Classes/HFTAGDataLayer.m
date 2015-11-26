@@ -58,6 +58,6 @@
 
 - (RACSignal*)dataChangeSignal
 {
-    return self.changeSignal;
+    return [self.changeSignal throttle:0.001];
 }
 @end

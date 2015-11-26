@@ -101,7 +101,7 @@ static inline id safe_cast_helper(id x, Class c) {
 
 - (RACSignal*)dataChangeSignal
 {
-    return self.changeSignal;
+    return [self.changeSignal throttle:0.001];
 }
 
 - (id)findValidConfig:(NSArray*)rules
