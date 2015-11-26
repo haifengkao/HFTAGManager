@@ -100,14 +100,20 @@ describe(@"HFTAGContainer", ^{
             
             context(@"data layer changed", ^{
                 it(@"should not cache data", ^{
+                    __block BOOL done = NO;
                     NSDictionary* dict = [container dictionaryForKey:key defaultRule:rule2];
                     [[dict should] equal:rule2];
                     
+                    [[dataLayer dataChangeSignal] subscribeNext:^(id x) {
+                        
+                        NSDictionary* dict = [container dictionaryForKey:key defaultRule:nil];
+                        [[dict should] beNil];
+                        done = YES;
+                    }];
+                    
                     [dataLayer pushValue:@(3) forKey:@"activatedTimes"];
                     
-                    dict = [container dictionaryForKey:key defaultRule:nil];
-                    [[dict should] beNil];
-                    
+                    [[expectFutureValue(@(done)) shouldEventuallyBeforeTimingOutAfter(10.0)] beYes];
                 });
             });
             
