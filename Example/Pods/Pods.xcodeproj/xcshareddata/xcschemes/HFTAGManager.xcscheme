@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'CC039E214DE7D85362705041'
+               BlueprintIdentifier = 'F65654F2FD1E8CA25607807D'
                BlueprintName = 'HFTAGManager'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libHFTAGManager.a'>
