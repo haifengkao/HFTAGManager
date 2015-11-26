@@ -113,14 +113,20 @@ static inline id safe_cast_helper(id x, Class c) {
             
             BOOL isValidRule = NO;
             // we will return the rule after first match, so the order of rules are important
-            // you should put complicated rule first
+            // you should put the most hard-to-fulfill rule first
             if (predStr.length <= 0) {
                 // default rule
                 isValidRule = YES;
             } else {
-                NSPredicate* predicate = [NSPredicate predicateWithFormat:predStr];
-                if ([predicate evaluateWithObject:[self dataLayer].datalayer]) {
-                    isValidRule = YES;
+                @try {
+                    NSPredicate* predicate = [NSPredicate predicateWithFormat:predStr];
+                    if ([predicate evaluateWithObject:[self dataLayer].datalayer]) {
+                        isValidRule = YES;
+                    }
+                }
+                @catch (...){
+                    // bad predicate str
+                    
                 }
             }
             
