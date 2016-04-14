@@ -1,1 +1,1 @@
-../../../../../Pod/Classes/HFTAGContainer.h
+../../../../../Pod/Classes/hftagcontainer.h
