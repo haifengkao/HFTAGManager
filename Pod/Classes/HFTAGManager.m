@@ -4,7 +4,8 @@
 //
 //  Created by Hai Feng Kao on 2015/10/3.
 //
-//
+//  HFTagContainer has a cached version on disk, but HFTagDataLayer doesn't.
+//  The data of HFTagDataLayer is recreated everytime when the app is started
 
 #import "HFTAGManager.h"
 #import <ReactiveCocoa/RACEXTScope.h>

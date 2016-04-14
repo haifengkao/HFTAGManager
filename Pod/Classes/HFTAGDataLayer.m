@@ -4,6 +4,7 @@
 //
 //  Created by Hai Feng Kao on 2015/9/27.
 //
+//  It doesn't cache any data
 //
 
 #import "HFTAGDataLayer.h"
@@ -53,6 +54,8 @@
     if (key) {
         return self.datalayer[key];
     }
+
+    NSAssert(NO, @"trying to access a non-existing key");
     return nil;
 }
 
