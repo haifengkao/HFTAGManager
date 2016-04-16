@@ -39,7 +39,7 @@ static inline id safe_cast_helper(id x, Class c) {
 
 - (void)setPredicate:(NSString*)predicateString rule:(id)rule
 {
-    NSAssert(![rule isKindOfClass:[HFTageRule class]], @"rule has to be json objects: NSString, NSNumber, NSDictinoary or NSArray");
+    NSAssert(![rule isKindOfClass:[HFTAGRule class]], @"rule has to be json objects: NSString, NSNumber, NSDictinoary or NSArray");
 
     if (predicateString.length <= 0) {
         // a default rule
