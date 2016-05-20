@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <ReactiveCocoa/RACSignal.h>
+@class RACSignal; // cannot use non-modular header in modules
 /**
  * The data layer is a dictionary holding generic information about the
  * application. It uses a standard set of keys so it can be read by any party
