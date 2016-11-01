@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "HFTAGManager"
-  s.version          = "0.13.0"
+  s.version          = "0.15.0"
   s.summary          = "a open source Google Tag Manager clone for iOS."
 
 # This description is used to generate tags and improve search results.
