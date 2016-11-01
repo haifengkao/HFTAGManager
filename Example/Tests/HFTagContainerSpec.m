@@ -9,6 +9,7 @@
 #import <Kiwi/Kiwi.h>
 #import "HFTAGContainer.h"
 #import "HFTAGRule.h"
+#import "RACSignal.h"
 
 SPEC_BEGIN(HFTAGContainerSpec)
 
