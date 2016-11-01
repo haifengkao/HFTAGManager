@@ -7,7 +7,7 @@ target 'HFTAGManager_Example' do
 end
 
 target 'HFTAGManager_Tests' do
-  #pod "HFTAGManager", :path => "../"
+  pod "HFTAGManager", :path => "../"
 
   pod 'Kiwi'
   pod 'LeakCanaryiOS'
