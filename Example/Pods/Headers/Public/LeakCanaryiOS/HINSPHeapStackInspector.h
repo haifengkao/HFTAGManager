@@ -1,1 +1,0 @@
-../../../LeakCanaryiOS/Pod/Classes/HINSPHeapStackInspector.h

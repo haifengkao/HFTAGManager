@@ -1,5 +1,5 @@
 PODS:
-  - HFTAGManager (0.7.0):
+  - HFTAGManager (0.14.0):
     - ReactiveCocoa (~> 2.0)
   - Kiwi (2.4.0)
   - LeakCanaryiOS (0.1.0)
@@ -18,12 +18,14 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   HFTAGManager:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  HFTAGManager: 2905e3cdf53ac5ffdcef8de5e82f90d28173a514
+  HFTAGManager: 667d8c30fd94c8f155919e38c379348e060a0eca
   Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
   LeakCanaryiOS: 649055bdb9c681da0b3437cd2428ce30f1493e4b
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 042f024e61f9b11ad9802c12d140adddaeef25f5
+
+COCOAPODS: 1.0.1

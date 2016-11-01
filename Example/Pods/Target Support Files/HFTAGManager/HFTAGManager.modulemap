@@ -1,0 +1,6 @@
+framework module HFTAGManager {
+  umbrella header "HFTAGManager-umbrella.h"
+
+  export *
+  module * { export * }
+}

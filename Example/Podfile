@@ -1,11 +1,12 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '7.0'
+platform :ios,'8.0'
+use_frameworks!
 
-target 'HFTAGManager_Example', :exclusive => true do
+target 'HFTAGManager_Example' do
   pod "HFTAGManager", :path => "../"
 end
 
-target 'HFTAGManager_Tests', :exclusive => true do
+target 'HFTAGManager_Tests' do
   #pod "HFTAGManager", :path => "../"
 
   pod 'Kiwi'
