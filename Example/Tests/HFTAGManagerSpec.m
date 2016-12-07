@@ -9,7 +9,7 @@
 #import <Kiwi/Kiwi.h>
 #import "HFTAGManager.h"
 #import "LeakCanary.h"
-#import <ReactiveCocoa/RACEXTScope.h>
+@import ReactiveObjC;
 
 @interface ManagerTest : NSObject <HFTAGContainerCallback>
 @property (assign) BOOL done;

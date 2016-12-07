@@ -85,13 +85,13 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/HFTAGManager/HFTAGManager.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/ReactiveCocoa/ReactiveCocoa.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ReactiveObjC/ReactiveObjC.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Kiwi/Kiwi.framework"
   install_framework "$BUILT_PRODUCTS_DIR/LeakCanaryiOS/LeakCanaryiOS.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/HFTAGManager/HFTAGManager.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/ReactiveCocoa/ReactiveCocoa.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ReactiveObjC/ReactiveObjC.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Kiwi/Kiwi.framework"
   install_framework "$BUILT_PRODUCTS_DIR/LeakCanaryiOS/LeakCanaryiOS.framework"
 fi

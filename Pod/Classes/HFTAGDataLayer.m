@@ -8,7 +8,7 @@
 //
 
 #import "HFTAGDataLayer.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
+@import ReactiveObjC;
 
 @interface HFTAGDataLayer()
 @property RACSubject* changeSignal;

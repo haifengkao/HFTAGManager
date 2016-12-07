@@ -1,15 +1,9 @@
 PODS:
   - HFTAGManager (0.17.0):
-    - ReactiveCocoa (~> 2.0)
+    - ReactiveObjC (~> 2.0)
   - Kiwi (2.4.0)
   - LeakCanaryiOS (0.1.0)
-  - ReactiveCocoa (2.5):
-    - ReactiveCocoa/UI (= 2.5)
-  - ReactiveCocoa/Core (2.5):
-    - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.5)
-  - ReactiveCocoa/UI (2.5):
-    - ReactiveCocoa/Core
+  - ReactiveObjC (2.1.0)
 
 DEPENDENCIES:
   - HFTAGManager (from `../`)
@@ -21,10 +15,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  HFTAGManager: 83a98448c375dfb08b55a8913660eb75732b12ef
+  HFTAGManager: d20b4ad44b8af4b46540589a99f873d7bbf3ca20
   Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
   LeakCanaryiOS: 649055bdb9c681da0b3437cd2428ce30f1493e4b
-  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  ReactiveObjC: 2edae120982d8e6d5407503a10edcfdd87eb8639
 
 PODFILE CHECKSUM: b90559ad7f9886dccfbdca5c1263db3863a805b3
 

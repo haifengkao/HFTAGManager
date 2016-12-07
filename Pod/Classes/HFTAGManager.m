@@ -8,8 +8,8 @@
 //  The data of HFTagDataLayer is recreated everytime when the app is started
 
 #import "HFTAGManager.h"
-#import <ReactiveCocoa/RACEXTScope.h>
-#import <ReactiveCocoa/ReactiveCocoa.h>
+
+@import ReactiveObjC;
 
 #ifndef SAFE_CAST
 #define SAFE_CAST(Object, Type) (Type *)safe_cast_helper(Object, [Type class])
