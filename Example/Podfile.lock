@@ -1,6 +1,6 @@
 PODS:
   - HFTAGManager (1.0.0):
-    - ReactiveObjC
+    - ReactiveObjC (~> 3.0)
   - Kiwi (3.0.0)
   - LeakCanaryiOS (0.8.0):
     - LeakCanaryiOS/no-arc (= 0.8.0)
@@ -17,7 +17,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  HFTAGManager: a9ba34b106def05e245ec050b83cf002d008e3b8
+  HFTAGManager: 7eed60c92750945ec59a789eac242e9b9f43c50d
   Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
   LeakCanaryiOS: ea340933288e2c075359591459e279a5369263fa
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
