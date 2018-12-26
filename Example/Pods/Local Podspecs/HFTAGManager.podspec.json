@@ -1,6 +1,6 @@
 {
   "name": "HFTAGManager",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "summary": "a open source Google Tag Manager clone for iOS.",
   "description": "A configuration tool to change iOS Apps' behavior on the fly. \nIf you want to host Google Tag Manager on your own, this is the tool of choice.",
   "homepage": "https://github.com/haifengkao/HFTAGManager",
@@ -10,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/haifengkao/HFTAGManager.git",
-    "tag": "1.0.0"
+    "tag": "1.1.0"
   },
   "platforms": {
     "ios": "10.0"
