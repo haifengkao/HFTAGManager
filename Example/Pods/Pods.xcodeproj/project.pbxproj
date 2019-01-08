@@ -2423,6 +2423,36 @@
 			};
 			name = Release;
 		};
+		451241DEE36DF8B930B1EA9CF23EE95D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DE7DC9C32D2A62124A0F8B68CF5E31D /* HFTAGManager.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/HFTAGManager/HFTAGManager-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/HFTAGManager/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/HFTAGManager/HFTAGManager.modulemap";
+				PRODUCT_NAME = HFTAGManager;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		53A3C429A37CE0C92DC66A0897325565 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8AF75E2F6E41E0DA834565237583BC77 /* LeakCanaryiOS.xcconfig */;
@@ -2578,36 +2608,6 @@
 			};
 			name = Debug;
 		};
-		92C8DE52179A83ED708066C82F41624B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DE7DC9C32D2A62124A0F8B68CF5E31D /* HFTAGManager.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/HFTAGManager/HFTAGManager-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/HFTAGManager/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/HFTAGManager/HFTAGManager.modulemap";
-				PRODUCT_NAME = HFTAGManager;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		9C2FBBD76121852705834CC1A38E3FD6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8D2762CD3E9C7AD733BE6F44AA002075 /* Pods-HFTAGManager_Tests.release.xcconfig */;
@@ -2704,11 +2704,10 @@
 			};
 			name = Release;
 		};
-		DCE40A9DA149CB2A52C519325939154C /* Release */ = {
+		D302C219393DCB1DEDB280C35059FE5C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6DE7DC9C32D2A62124A0F8B68CF5E31D /* HFTAGManager.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -2721,7 +2720,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/HFTAGManager/HFTAGManager-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/HFTAGManager/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/HFTAGManager/HFTAGManager.modulemap";
 				PRODUCT_NAME = HFTAGManager;
@@ -2729,11 +2728,10 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		DDB87C22C5C3CDC4489292F591C4C092 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -2862,8 +2860,8 @@
 		FF0EB51857ED25DD7BF1D41B8F43B924 /* Build configuration list for PBXNativeTarget "HFTAGManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				92C8DE52179A83ED708066C82F41624B /* Debug */,
-				DCE40A9DA149CB2A52C519325939154C /* Release */,
+				D302C219393DCB1DEDB280C35059FE5C /* Debug */,
+				451241DEE36DF8B930B1EA9CF23EE95D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -17,7 +17,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  HFTAGManager: 3cd5d91a6275a238c9ae8ebc33c183ebc625a202
+  HFTAGManager: a39ebb5fb9025e8e2bd0ea34f35c0fcb7651be53
   Kiwi: fbeafef0f00e4d8f7dcb3420a4930afe70af77f7
   LeakCanaryiOS: ea340933288e2c075359591459e279a5369263fa
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
