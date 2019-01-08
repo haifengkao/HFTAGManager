@@ -22,10 +22,9 @@ static inline id safe_cast_helper(id x, Class c) {
     NSDictionary* _container;
 }
 
-@property RACDisposable* dataLayerDisposable;
-@property RACSubject* changeSignal;
+@property (readonly, strong) RACSubject* changeSignal;
+@property (strong) RACDisposable* dataLayerDisposable;
 
-@property(readwrite, nonatomic, copy) NSString *containerId;
 - (HFTAGDataLayer*) dataLayer; // we provide our own atomic implementation
 @end
 
@@ -43,8 +42,8 @@ static inline id safe_cast_helper(id x, Class c) {
 - (instancetype)initWithId:(NSString*)containerId
 {
     if (self = [super init]) {
-        self.ruleCache = [NSCache new];
-        self.containerId = containerId;
+        _ruleCache = [NSCache new];
+        _containerId = containerId;
         _changeSignal = [RACSubject subject];
     }
     

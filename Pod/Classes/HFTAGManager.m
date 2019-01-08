@@ -19,7 +19,7 @@ static inline id safe_cast_helper(id x, Class c) {
 #endif
 
 @interface HFTAGManager()
-@property (nonatomic, strong) HFTAGDataLayer *dataLayer;
+@property (readwrite, strong) NSMutableDictionary* theContainers;
 @end
 
 @implementation HFTAGManager
@@ -38,18 +38,23 @@ static inline id safe_cast_helper(id x, Class c) {
 {
     self = [super init];
     if (self) {
-        self.dataLayer = [[HFTAGDataLayer alloc] init];
-        self.containers = [NSMutableDictionary new];
+        _dataLayer = [[HFTAGDataLayer alloc] init];
+        _theContainers = [NSMutableDictionary new];
     }
     return self;
 }
+
+- (NSDictionary*)containers
+{
+    return self.theContainers;
+} 
 
 - (HFTAGContainer *)openContainerById:(NSString *)containerId
                              callback:(id <HFTAGContainerCallback>)callback
 {
     NSParameterAssert(containerId.length > 0);
     
-    if (self.containers[containerId]) {
+    if (self.theContainers[containerId]) {
 //        * If TAGManager::openContainerById:callback: is called a second time for a
 //        * given <code>containerId</code>, <code>nil</code> will be returned unless
 //        * the previous opened container has already been closed.
@@ -74,7 +79,7 @@ static inline id safe_cast_helper(id x, Class c) {
 
     // load data from cache
     container.dataLayer = self.dataLayer;
-    self.containers[containerId] = container;
+    self.theContainers[containerId] = container;
 
     [callback containerRefreshBegin:container refreshType:kTAGContainerCallbackRefreshTypeNetwork];
     

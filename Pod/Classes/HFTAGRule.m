@@ -19,7 +19,7 @@ static inline id safe_cast_helper(id x, Class c) {
     NSArray* _configs;
 }
 
-@property (nonatomic, copy) void(^block)(HFTAGRule*);
+@property (readonly, copy) void(^block)(HFTAGRule*);
 @end
 
 @implementation HFTAGRule
@@ -31,20 +31,17 @@ static inline id safe_cast_helper(id x, Class c) {
 - (instancetype)initWithBlock:(void(^)(HFTAGRule*))block
 {
     if (self = [super init]) {
-        self.rules = [NSMutableArray new];
-        self.block = block;
+        _rules = [NSMutableArray new];
+        _block = block;
     }
     return self;
 }
 
-- (void)setPredicate:(NSString*)predicateString rule:(id)rule
+- (void)setPredicate:(NSString*)thePredicateString rule:(id)rule
 {
     NSAssert(![rule isKindOfClass:[HFTAGRule class]], @"rule has to be json objects: NSString, NSNumber, NSDictinoary or NSArray");
 
-    if (predicateString.length <= 0) {
-        // a default rule
-        predicateString = @"";
-    }
+    NSString* predicateString = thePredicateString ?: @""; // a default rule
     
     if (rule) {
         [self.rules addObject:@[predicateString, rule]];

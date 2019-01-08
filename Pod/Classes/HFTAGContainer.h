@@ -103,13 +103,13 @@ typedef enum {
 /**
  * The ID for this container.
  */
-@property(readonly, nonatomic, copy) NSString *containerId;
+@property (readonly, copy) NSString *containerId;
 
 /**
  * The last time (in milliseconds since midnight Jan 1, 1970 UTC) that this
  * container was refreshed from the network.
  */
-@property(atomic, readonly) double lastRefreshTime;
+@property (readonly, assign) double lastRefreshTime;
 
 - (NSDictionary*)dictionaryForKey:(NSString *)key defaultRule:(id)rule;
 - (NSArray*)arrayForKey:(NSString *)key defaultRule:(id)rule;
@@ -170,12 +170,12 @@ typedef enum {
 - (BOOL)isDefault;
 
 // unit test only
-@property(atomic, copy, readonly) NSString* updateId;
-@property NSCache* ruleCache; // store the rules retrieved from remote server
+@property (readonly, copy) NSString* updateId;
+@property (readonly, strong) NSCache* ruleCache; // store the rules retrieved from remote server
 - (void)setDataLayer:(HFTAGDataLayer *)dataLayer;
 - (NSDictionary*)container; // store the rules retrieved from remote server. we provide our own atomic implenmentation
 - (void)setContainer:(NSDictionary *)container;
-@property (atomic) NSDictionary* userInfo; // store the rules retrieved from remote server. we provide our own atomic implenmentation
+@property (copy) NSDictionary* userInfo; // store the rules retrieved from remote server. we provide our own atomic implenmentation
 
 - (RACSignal*)dataChangeSignal;
 @end

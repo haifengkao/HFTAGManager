@@ -123,7 +123,7 @@ typedef NS_ENUM(NSUInteger, TAGDispatchResult) {
  * logs error/warning messages and ignores info/debug/verbose messages.
  * You can use your own customized logger by setting this property.
  */
-@property(nonatomic, strong) id logger; // not implemented
+//@property (strong) id logger; // not implemented
 
 /**
  * The refresh mode used for Google Tag Manager SDK. Setting this to
@@ -131,12 +131,12 @@ typedef NS_ENUM(NSUInteger, TAGDispatchResult) {
  * method to use only the default container for development purposes. Default is
  * @ref kTAGRefreshModeStandard.
  */
-@property(nonatomic) TAGRefreshMode refreshMode;
+@property (assign) TAGRefreshMode refreshMode;
 
 /**
  * Call TAGDataLayer::push: method to push events and other data.
  */
-@property(nonatomic, readonly, strong) HFTAGDataLayer *dataLayer;
+@property (readonly, strong) HFTAGDataLayer *dataLayer;
 
 /**
  * Returns a container.
@@ -228,5 +228,5 @@ typedef NS_ENUM(NSUInteger, TAGDispatchResult) {
 //- (void)dispatchWithCompletionHandler:(void (^)(HFTAGDispatchResult))completionHandler;
 
 // protected
-@property NSMutableDictionary* containers;
+- (NSDictionary*)containers;
 @end

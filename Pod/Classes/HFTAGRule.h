@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface HFTAGRule : NSObject
-@property NSMutableArray* rules;
+@property (readonly, strong) NSMutableArray* rules;
 
 - (instancetype)initWithBlock:(void(^)(HFTAGRule* tagRule))block NS_DESIGNATED_INITIALIZER;
 - (void)setPredicate:(NSString*)predicateString rule:(id)rule;
